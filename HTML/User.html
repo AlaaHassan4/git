@@ -6,58 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Page</title>
-    <link rel="stylesheet" href="../CSS/admin.css" />
+
+    <script src="../argon/vendor/chart.js/dist/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="../CSS/user.css" />
+    <link rel="stylesheet"
+        href="../argon/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.min.css" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
- 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body>
 
 
-<!-- Start page -->
-<div class="page">
-    <!-- Start header (1 div) -->
-    <header>
-        <nav id="list">
+    <!-- Start page -->
+    <div class="page">
+        <!-- Start header (1 div) -->
+        <header>
+            <nav id="list">
                 <div class="logo">
                     <img src="../logo.jpg" alt="logo" class="logo">
                 </div>
                 <ul ref=linksContainer class="toggle " id="toggle ">
-                    <li index="1"  onclick="dispaly(this)" class="navLi">
+
+                    <li index="1" onclick="dispaly(this)" class="navLi">
 
                         <i class="fas fa-search fs"></i>
-                        <a onClick=boxHandler href="#"  class="link">
+                        <a onClick=boxHandler href="#" class="link">
                             Monitoring
                         </a>
                     </li>
-                    <li index="2"  onclick="dispaly(this)" class="navLi">
+
+
+
+                    <li index="2" onclick="dispaly(this)" class="navLi">
 
                         <i class="far fa-file-alt fs"></i>
-                        <a onClick=boxHandler href="#"  class="link">
+                        <a onClick=boxHandler href="#" class="link">
                             Emergency
                         </a>
                     </li>
-                    <li index="3"  onclick="dispaly(this)" class="navLi">
+                    <li index="3" onclick="dispaly(this)" class="navLi">
                         <i class="fas fa-print fs"></i>
-                        <a onClick=boxHandler href="#"  class="link">
+                        <a onClick=boxHandler href="#" class="link">
                             Reporting
                         </a>
                     </li>
                     <li class="navLi">
                         <i class="far fa-user-circle fs"></i>
                         <div class="dropdown">
-                            <a onClick="boxHandler" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a onClick="boxHandler" class="dropdown-toggle" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Welcome
                             </a>
                             <ul class="dropdown-menu">
-                                <li index=""><a class="dropdown-item" href="editprofile.html">Edit profile</a></li>
-                                <li index=""><a class="dropdown-item" href="index.html"> Log Out</a></li>
+
+                                <li index="4"><a class="dropdown-item" href="index.html"> Log Out</a></li>
                             </ul>
                         </div>
                     </li>
@@ -67,22 +80,593 @@
                 </div>
 
 
-        </nav>
-    </header>
-    <!-- End header (1 div) -->
-    <div class="ali">
-        <section class="hide">one1</section>
-        <section class="hide">one2</section>
-        <section class="hide">one3</section>
-        <section class="hide">one4</section>
+            </nav>
+        </header>
+        <!-- End header (1 div) -->
+        <div class="ali">
+       
 
-    </div>
-</div>
-<script src="../JS/admin.js"></script>
-<!-- End div -->
-    <script src="https://kit.fontawesome.com/a498b2d786.js" crossorigin="anonymous"></script>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+          <section>
 
+                <h1 class="sv"> STREAM VIDEO</h1>
+                <div class="video">
+                    <!-- <img src="../dna.PNG" alt="dna" class="dna"> -->
+
+
+                    <video id="videoPlayer" width="90%" height="90%" controls muted="muted" autoplay>
+                        <source src="/liveStream" type="video/mp4" />
+                    </video>
+                    <img src="../s.png" alt="s" class="s">
+
+                </div>
+                <div class="ulselect">
+
+                    <ul class="Alaa">
+
+
+
+                        <li class="  temperature selectt"> TEMPERATURE
+                            <div class="lirow">
+                                <canvas id="myone" style="width:577px; height: 250px;"></canvas>
+                                <img src="../ca.png" alt="ca" class="ca">
+                                <img src="../cc.png" alt="ca" class="cc">
+
+                                <!-- <div class="multi-graph margin">
+                  The ideal weather
+                    <div class="graph" data-name=" 25c from" 
+                         style="--percentage : 50; --fill: #8a3188 ;">
+                    </div> 
+                   -->
+
+
+                                <div class="multi-graph margin">
+                                    Weather
+                                    <div class="graph" data-name="undue up"
+                                        style="--percentage : 50; --fill: #9b7a99 ;">
+                                    </div>
+                                    <div class="graph" data-name="hot" style="--percentage : 40; --fill: #853083 ;">
+                                    </div>
+                                    <div class="graph" data-name=" Ideal " style="--percentage : 22; --fill: #BE22C0;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li class="  heartrate selectt"> HEART RATE
+                            <div class="lirow">
+                                <canvas id="mytwo" style="width:577px; height: 250px;"></canvas>
+                                <img src="../lo.png" alt="lo" class="lo">
+                                <img src="../Normal1.jpg" alt="Normal" class="Normal">
+                                <!-- <canvas id="Charttow"></canvas> -->
+                                <!-- <div id="chartContainer" style="height: 100px; width: 30%;"></div> -->
+
+                                <!-- <canvas id="Charttem" style=" height: 375px; width: 375px;"></canvas> -->
+
+
+                            </div>
+                        </li>
+
+                        <li class=" airpurity selectt"> AIR PURITY
+                            <div class="lirow">
+                                <canvas id="myth" style="width:577px; height: 250px;"></canvas>
+                                <img src="../pngegg.png" alt="pngegg" class="pngegg">
+
+                                <div class="semi-donut-model-2 margin" style="--percentage : 90; --fill: #039BE5 ;">
+                                    The Ideal 90%
+                                </div>
+                            </div>
+
+
+                        </li>
+
+                        <li class="  airhumidity selectt">AIR HUMIDITY
+                            <div class="lirow">
+                                <canvas id="myfo" style="width:577px; height: 250px;"></canvas>
+                                <img src="../hom.png" alt="hom" class="hom">
+
+                                <canvas id="Chartfo"></canvas>
+                                <!-- <canvas id="myChartto" style="width:577px; height: 250px;"></canvas> -->
+
+                                <!-- <canvas id="Charttow"></canvas>
+              </div> -->
+                        </li>
+
+                        <li class="  animaltem selectt"> ANIMAL TEMPERATURE
+
+                            <!-- <canvas id="myChartfr" style="width:577px; height: 250px;"></canvas> -->
+                            <!-- <canvas id="Chartfrd"></canvas> -->
+                            <canvas id="myf" style="width:577px; height: 250px;"></canvas>
+                            <div class="multi-graph margin">
+                                Temperature
+                                <div class="graph" data-name="dead" style="--percentage : 46; --fill: #9b7a99 ;">
+                                </div>
+                                <div class="graph" data-name="living" style="--percentage : 40; --fill: #853083 ;">
+                                </div>
+                                <div class="graph" data-name="dead" style="--percentage : 19; --fill: #BE22C0;">
+                                </div>
+                            </div>
+                            <img src="../cca.png" alt="cca" class="cca">
+                        </li>
+
+                        <li class="  oximeter selectt"> OXIMETER
+                            <canvas id="mysi" style="width:577px; height: 250px;"></canvas>
+                            <canvas id="Charttow"></canvas>
+                            <!-- <div class="lirow"> -->
+                            <!-- <canvas id="mytryy" style="width:577px; height: 250px;"></canvas> -->
+                            <!-- <canvas id="Chartthd"></canvas>
+              </div> -->
+                            <img src="../boo.jpg" alt="boo" class="boo">
+                        </li>
+
+
+                    </ul>
+
+                    <div class="seventh-div">
+                        <div id="mon">
+                            <div>
+
+                                <div id="contenar_titel">
+
+                                    <i class="fas fa-bars" id="burger"></i>
+                                    <h2 id="title">Monitoring</h2>
+                                </div>
+                                <div id="triangle" class="wow slideInDown"></div>
+                                <form class="wow slideInDown" id="first_form">
+
+                                    <div class="form-group select-all">
+                                        <input type="checkbox" name="colorCheckbox" value="selectt" />
+                                        <label for="select-all">
+                                            <span class="checkbox">
+                                                <span class="check"></span>
+                                            </span>
+                                            Select All
+                                        </label>
+                                    </div>
+                                    <!-- <div class="form-group">
+                    <input type="checkbox" name="colorCheckbox" value="stream" />
+                    <label for="web-stream">
+                      <span class="checkbox">
+                        <span class="check"></span>
+                      </span>
+                      STREAM VIDEO
+                    </label>
+                  </div> -->
+                                    <div class="form-group">
+                                        <input type="checkbox" name="colorCheckbox" value="temperature" />
+                                        <label for="web-temperature">
+                                            <span class="checkbox">
+                                                <span class="check"></span>
+                                            </span>
+                                            TEMPERATURE
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" name="colorCheckbox" value="heartrate" />
+                                        <label for="web-heartrate">
+                                            <span class="checkbox">
+                                                <span class="check"></span>
+                                            </span>
+                                            HEART RATE
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" name="colorCheckbox" value="airpurity" />
+                                        <label for="web-airpurity">
+                                            <span class="checkbox">
+                                                <span class="check"></span>
+                                            </span>
+                                            AIR PURITY
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="checkbox" name="colorCheckbox" value="airhumidity" />
+                                        <label for="web-airhumidity">
+                                            <span class="checkbox">
+                                                <span class="check"></span>
+                                            </span>
+                                            AIR HUMIDITY
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="checkbox" name="colorCheckbox" value="animaltem" />
+                                        <label for="web-animaltem">
+                                            <span class="checkbox">
+                                                <span class="check"></span>
+                                            </span>
+                                            ANIMAL TEMPERATURE
+                                        </label>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <input type="checkbox" name="colorCheckbox" value="oximeter" />
+                                        <label for="web-oximeter">
+                                            <span class="checkbox">
+                                                <span class="check"></span>
+                                            </span>
+                                            OXIMETER
+                                        </label>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- start emergency -->
+            <section class="hide">
+                <div id="back">
+
+                    <h2 id="ps">Write the report emergency</h2>
+
+                    <div id="front">
+
+                        <h3 id="yp">Your report </h3>
+
+                        <hr id="edithr">
+
+
+                        <form>
+                            <div id="con">
+                                <div id="cone">
+
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Animal</option>
+                                        <option value="1">Cat1</option>
+                                        <option value="2">Cat2</option>
+                                        <option value="3">Cat3</option>
+                                    </select><br><br>
+
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                            placeholder="name@example.com">
+                                        <label for="floatingInput">Cass</label>
+                                    </div><br>
+
+                                    <div class="form-floating mb-3 ">
+                                        <input type="name" class="form-control" id="floatingInput"
+                                            placeholder="name@example.com">
+                                        <label for="floatingInput">Description</label>
+                                    </div>
+
+
+                                    <p id="Danger"><b>Danger level:</b></p>
+                                    <div id="dl">
+                                        <div>
+                                            <label class="container"><b>Low </b>
+                                                <input type="radio" name="radio" value="Low">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="container"><b>Mid</b>
+                                                <input type="radio" name="radio" value="Low">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+
+                                        <div>
+                                            <label class="container"><b>High</b>
+                                                <input type="radio" name="radio" value="Low">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="ctoww">
+
+                                    <img src="../ph.jpg" alt="alternatetext" id="ph">
+                                    <div class="button_em">
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <button type="reset" id="save" class="btn btn-primary">Reset</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <button type="submit" id="save" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+
+                    </form>
+
+
+            </section>
+            <section class="hide">
+
+                <div id="backre">
+
+
+                    <div id="frontre">
+
+                        <h3 id="yp">Select Your Report </h3>
+
+                        <hr id="edithr">
+
+
+                        <form>
+                            <div id="conre">
+                                <div id="conere">
+                                    <scection class=".Booorder">
+                                        <p id=Danger><b>Category:</b></p><br>
+                                        <select class="form-select" class="conre" aria-label="Default select example">
+                                            <option selected>ID</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+
+
+                                        <p id=Danger><b>Animal:</b></p><br>
+                                        <select class="form-select" class="conre" aria-label="Default select example">
+                                            <option selected>Select</option>
+                                            <option value="1">Cat1</option>
+                                            <option value="2">Cat2</option>
+                                            <option value="3">Cat3</option>
+                                        </select>
+                        </form>
+                        <p id=Danger><b>Date:</b></p><br>
+
+                        <div id="mySidepanel" class="sidepanel">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> </a>
+                            <a class="inre" href="#"><b id=Danger>From:</b>
+                                <input type="datetime-local" step="2" class="dates" id="start" name="search-start"
+                                    value="2022-04-14T02:10:14" min="2022-04-14" max="2022-12-31">
+                                <!-- <input id="appt-start-time" type="time" name="appt-time" step="2"> -->
+                            </a>
+                            <a class="inre " href="#"> <b id=Danger class=Dangerto>To:</b>
+                                <input type="datetime-local" step="2" class="dates" id="End" name="search-start"
+                                    value="2022-06-10T10:10:52" min="2022-04-14" max="2022-12-31">
+                                <!-- <input id="appt-end-time" type="time" name="appt-time" step="2"> -->
+                            </a>
+
+                        </div>
+                        <div class="uprep">
+                            <button class="btn btn-outline-primary" id="updatebutton">Show data</button>
+
+                            <button onclick="myfun()" class="btn btn-outline-primary " id="bprint">Print
+                                Reporting</button>
+                        </div>
+                    </div>
+                    <div id="ctoww">
+
+                        <canvas id="myre" style="width:751px; height: 465px;"></canvas>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </section>
+
+
+            <!-- End div -->
+
+            <script>
+                var liveOrders = null;
+                //     var options = {
+                //   scales: {
+                //     yAxes: [{
+                //       ticks: {
+                //         beginAtZero: true,
+                //         min: 0
+                //       }    
+                //     }]
+                //   }
+                // };
+
+                // charts1
+                window.addEventListener('DOMContentLoaded', (event) => {
+                    const rect = document.getElementById("myre").getContext("2d");
+
+
+
+                    const remyChart = new Chart(rect, {
+                        type: 'line',
+                        data: {
+                            labels: ['Time'],
+                            datasets: [
+                                {
+                                    // events: ['click'],
+                                    label: 'Heart Rate (BPM) ',
+                                    data: [],
+                                    // options : ,
+                                    backgroundColor: [
+                                        'rgb(255, 255, 255,0.2)',
+                                    ],
+                                    borderColor: [
+                                        '#C0504E',
+                                    ],
+                                    borderWidth: 1
+                                },
+                                {
+                                    // events: ['click'],
+                                    label: 'Animal Temperature (Celsius)',
+                                    data: [],
+                                    // options : ,
+                                    backgroundColor: [
+                                        'rgb(255, 255, 255,0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgb(128, 0, 128)',
+                                    ],
+                                    borderWidth: 1
+                                },
+                                {
+                                    // events: ['click'],
+                                    label: 'Humidity (percent)',
+                                    data: [],
+                                    // options : ,
+                                    backgroundColor: [
+                                        'rgb(255, 255, 255,0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgb(10, 64, 127)',
+                                    ],
+                                    borderWidth: 1
+                                },
+                                {
+                                    // events: ['click'],
+                                    label: ' weather temperature (Celsius)',
+                                    data: [],
+                                    // options : ,
+                                    backgroundColor: [
+                                        'rgba(255, 255, 255,0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                    ],
+                                    borderWidth: 1
+                                },
+                                {
+                                    // events: ['click'],
+                                    label: 'Air Purity (AQI)',
+                                    data: [],
+                                    // options : ,
+                                    backgroundColor: [
+                                        'rgb(255, 255, 255,0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgb(10, 64, 127)',
+                                    ],
+                                    borderWidth: 1
+                                },
+                                {
+                                    // events: ['click'],
+                                    label: 'Oximeter (percent)',
+                                    data: [],
+                                    // options : ,
+                                    backgroundColor: [
+                                        'rgb(255, 255, 255,0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgb(98, 100, 86)',
+                                    ],
+                                    borderWidth: 1
+                                }
+
+                            ]
+                        },
+                        events: ['click'],
+                        options: {
+                            responsive: false,
+                            // scales: {
+                            //     yAxes: [{
+                            //         ticks: {
+                            //             beginAtZero: true
+                            //         }
+                            //     }]
+                            // }
+                        }
+                    });
+                    document.getElementById('updatebutton').addEventListener("click", loadData);
+                    function loadData() {
+
+                        remyChart.data.datasets[0].data = [];
+                        remyChart.data.datasets[1].data = [];
+                        remyChart.data.datasets[2].data = [];
+                        remyChart.data.datasets[3].data = [];
+                        remyChart.data.datasets[4].data = [];
+                        remyChart.data.datasets[5].data = [];
+                        remyChart.data.labels.pop();
+                        remyChart.data.datasets.forEach((dataset) => {
+                            dataset.data.pop();
+                        });
+                        remyChart.update();
+
+                        axios.post('http://localhost:8080/sensorData/getAll/', {
+                            from: document.getElementById('start').value.toString() + '.000000+0000',
+                            to: document.getElementById('End').value.toString() + '.000000+0000',
+                            animal_id: "1"
+                        }).then(function (response) {
+                            console.log(document.getElementById('start').value.toString());
+
+                            liveOrders = Array(JSON.parse('[' + (response.data.slice(0, -1)) + ']'));
+                            console.log(liveOrders);
+
+                            remyChart.data.labels.push('');
+
+                            liveOrders[0].forEach(el => {
+                                remyChart.data.datasets[0].data.push(el.Heart_Rate)
+                                remyChart.data.datasets[1].data.push(el.Animal_Temperature)
+                                remyChart.data.datasets[2].data.push(el.Humidity)
+                                remyChart.data.datasets[3].data.push(el.Weather)
+                                remyChart.data.datasets[4].data.push(el.Air_Qualit)
+                                remyChart.data.datasets[5].data.push(el.SpO2_Rate)
+                            });
+
+                            // remyChart.data.datasets.forEach((ds) => {
+                            //   console.log('1');
+                            //   // ds.data = dataa;
+                            //   liveOrders[0].forEach(el=>ds.data.push(el.Heart_Rate));
+                            //   console.log(ds.data);
+                            // });
+                            remyChart.data.labels.pop();
+                            remyChart.data.datasets.forEach((dataset) => {
+                                dataset.data.pop();
+                            });
+                            remyChart.update();
+                        })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+                    }
+                });
+                function getLiveOrders() {
+                    // const event = new Event('DOMContentLoaded');
+                    axios.post('http://localhost:8080/sensorData/getAll/', {
+                        from: document.getElementById('start').value.toString() + '.000000+0000',
+                        to: document.getElementById('End').value.toString() + '.000000+0000',
+                        animal_id: "1"
+                    }).then(function (response) {
+                        // Element.dispatchEvent(event);
+                        liveOrders = Array(JSON.parse('[' + (response.data.slice(0, -1)) + ']'));
+                        console.log(liveOrders);
+                        remyChart.data.labels.push('');
+                        remyChart.data.datasets.forEach((liveOrders) => {
+                            dataset.data.push(data.Heart_Rate);
+                        });
+                        remyChart.data.labels.pop();
+                        remyChart.data.datasets.forEach((dataset) => {
+                            dataset.data.pop();
+                        });
+                        remyChart.update();
+                    })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+            <script src="https://kit.fontawesome.com/a498b2d786.js" crossorigin="anonymous"></script>
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+                integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+                crossorigin="anonymous"></script>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <script src="../JS/new.js"></script>
 </body>
+
 </html>
